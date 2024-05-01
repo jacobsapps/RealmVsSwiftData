@@ -1,6 +1,6 @@
 //
 //  RealmUserDB.swift
-//  NoSwiftDataNoUI
+//  RealmVsSwiftData
 //
 //  Created by Jacob Bartlett on 09/04/2024.
 //
@@ -14,4 +14,3 @@ final class RealmUserDB: RealmDatabase {
 
     init() { }
 }
-

@@ -1,36 +1,29 @@
 //
-//  User.swift
-//  NoSwiftDataNoUI
+//  RealmUser.swift
+//  RealmVsSwiftData
 //
-//  Created by Jacob Bartlett on 02/04/2024.
+//  Created by Jacob Bartlett on 09/04/2024.
 //
 
 import Foundation
-import SwiftData
+import RealmSwift
 
-protocol User: Identifiable {
-    var id: UUID { get }
-    var firstName: String { get }
-    var surname: String { get }
-    var age: Int { get }
-}
-
-@Model
-final class SwiftUser: User {
+final class RealmUser: Object, User {
     
     enum UserError: Error {
         case nameNotFound
     }
     
-    @Attribute(.unique) let id: UUID
-    let firstName: String
-    let surname: String
-    let age: Int
-    
-    init() throws {
+    @Persisted(primaryKey: true) var id: UUID
+    @Persisted var firstName: String
+    @Persisted var surname: String
+    @Persisted var age: Int
+        
+    override init() {
+        super.init()
         guard let firstName = firstNames.randomElement(),
               let surname = surnames.randomElement() else {
-            throw UserError.nameNotFound
+            return
         }
         self.id = UUID()
         self.firstName = firstName
@@ -39,6 +32,7 @@ final class SwiftUser: User {
     }
     
     init(firstName: String, surname: String, age: Int) {
+        super.init()
         self.id = UUID()
         self.firstName = firstName
         self.surname = surname

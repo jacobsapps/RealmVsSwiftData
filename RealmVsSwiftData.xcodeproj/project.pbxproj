@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16168E342BE0C36300874AC2 /* SwiftStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16168E332BE0C36200874AC2 /* SwiftStudent.swift */; };
+		16168E362BE0C36A00874AC2 /* RealmStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16168E352BE0C36A00874AC2 /* RealmStudent.swift */; };
+		16168E3A2BE0C3ED00874AC2 /* SwiftStudentDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16168E392BE0C3ED00874AC2 /* SwiftStudentDB.swift */; };
+		16168E3E2BE0C70800874AC2 /* RealmStudentDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16168E3D2BE0C70800874AC2 /* RealmStudentDB.swift */; };
 		167973CB2BC804B9002FE4D9 /* RealmVsSwiftDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973CA2BC804B9002FE4D9 /* RealmVsSwiftDataApp.swift */; };
 		167973D12BC804BA002FE4D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167973D02BC804BA002FE4D9 /* Assets.xcassets */; };
 		167973D42BC804BA002FE4D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167973D32BC804BA002FE4D9 /* Preview Assets.xcassets */; };
@@ -15,7 +19,7 @@
 		167973E72BC805E0002FE4D9 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973E42BC805E0002FE4D9 /* SwiftDatabase.swift */; };
 		167973E82BC805E0002FE4D9 /* SwiftUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973E52BC805E0002FE4D9 /* SwiftUserDB.swift */; };
 		167973E92BC805E0002FE4D9 /* SwiftUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973E62BC805E0002FE4D9 /* SwiftUser.swift */; };
-		167973ED2BC805E4002FE4D9 /* RelamDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973EA2BC805E4002FE4D9 /* RelamDB.swift */; };
+		167973ED2BC805E4002FE4D9 /* RelamDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973EA2BC805E4002FE4D9 /* RelamDatabase.swift */; };
 		167973EE2BC805E4002FE4D9 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973EB2BC805E4002FE4D9 /* RealmUser.swift */; };
 		167973EF2BC805E4002FE4D9 /* RealmUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973EC2BC805E4002FE4D9 /* RealmUserDB.swift */; };
 		167973F22BC805FA002FE4D9 /* TestPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167973F12BC805FA002FE4D9 /* TestPlan.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16168E332BE0C36200874AC2 /* SwiftStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudent.swift; sourceTree = "<group>"; };
+		16168E352BE0C36A00874AC2 /* RealmStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStudent.swift; sourceTree = "<group>"; };
+		16168E392BE0C3ED00874AC2 /* SwiftStudentDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudentDB.swift; sourceTree = "<group>"; };
+		16168E3D2BE0C70800874AC2 /* RealmStudentDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStudentDB.swift; sourceTree = "<group>"; };
 		167973C72BC804B9002FE4D9 /* RealmVsSwiftData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmVsSwiftData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167973CA2BC804B9002FE4D9 /* RealmVsSwiftDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmVsSwiftDataApp.swift; sourceTree = "<group>"; };
 		167973D02BC804BA002FE4D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,7 +42,7 @@
 		167973E42BC805E0002FE4D9 /* SwiftDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
 		167973E52BC805E0002FE4D9 /* SwiftUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUserDB.swift; sourceTree = "<group>"; };
 		167973E62BC805E0002FE4D9 /* SwiftUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUser.swift; sourceTree = "<group>"; };
-		167973EA2BC805E4002FE4D9 /* RelamDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelamDB.swift; sourceTree = "<group>"; };
+		167973EA2BC805E4002FE4D9 /* RelamDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelamDatabase.swift; sourceTree = "<group>"; };
 		167973EB2BC805E4002FE4D9 /* RealmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		167973EC2BC805E4002FE4D9 /* RealmUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUserDB.swift; sourceTree = "<group>"; };
 		167973F12BC805FA002FE4D9 /* TestPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPlan.swift; sourceTree = "<group>"; };
@@ -56,6 +64,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16168E372BE0C3D900874AC2 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				167973E62BC805E0002FE4D9 /* SwiftUser.swift */,
+				167973E52BC805E0002FE4D9 /* SwiftUserDB.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		16168E382BE0C3DD00874AC2 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				16168E332BE0C36200874AC2 /* SwiftStudent.swift */,
+				16168E392BE0C3ED00874AC2 /* SwiftStudentDB.swift */,
+			);
+			path = Students;
+			sourceTree = "<group>";
+		};
+		16168E3B2BE0C3F000874AC2 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				167973EB2BC805E4002FE4D9 /* RealmUser.swift */,
+				167973EC2BC805E4002FE4D9 /* RealmUserDB.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		16168E3C2BE0C3F300874AC2 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				16168E352BE0C36A00874AC2 /* RealmStudent.swift */,
+				16168E3D2BE0C70800874AC2 /* RealmStudentDB.swift */,
+			);
+			path = Students;
+			sourceTree = "<group>";
+		};
 		167973BE2BC804B9002FE4D9 = {
 			isa = PBXGroup;
 			children = (
@@ -107,9 +151,9 @@
 		167973E02BC805B3002FE4D9 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				167973EB2BC805E4002FE4D9 /* RealmUser.swift */,
-				167973EC2BC805E4002FE4D9 /* RealmUserDB.swift */,
-				167973EA2BC805E4002FE4D9 /* RelamDB.swift */,
+				16168E3C2BE0C3F300874AC2 /* Students */,
+				16168E3B2BE0C3F000874AC2 /* Users */,
+				167973EA2BC805E4002FE4D9 /* RelamDatabase.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -117,9 +161,9 @@
 		167973E12BC805B7002FE4D9 /* SwiftData */ = {
 			isa = PBXGroup;
 			children = (
+				16168E382BE0C3DD00874AC2 /* Students */,
+				16168E372BE0C3D900874AC2 /* Users */,
 				167973E42BC805E0002FE4D9 /* SwiftDatabase.swift */,
-				167973E62BC805E0002FE4D9 /* SwiftUser.swift */,
-				167973E52BC805E0002FE4D9 /* SwiftUserDB.swift */,
 			);
 			path = SwiftData;
 			sourceTree = "<group>";
@@ -229,16 +273,20 @@
 				167973F72BC8060C002FE4D9 /* ContentViewModel.swift in Sources */,
 				167973F62BC8060C002FE4D9 /* ContentView.swift in Sources */,
 				167973E82BC805E0002FE4D9 /* SwiftUserDB.swift in Sources */,
+				16168E3E2BE0C70800874AC2 /* RealmStudentDB.swift in Sources */,
 				167973E92BC805E0002FE4D9 /* SwiftUser.swift in Sources */,
 				167973E72BC805E0002FE4D9 /* SwiftDatabase.swift in Sources */,
+				16168E342BE0C36300874AC2 /* SwiftStudent.swift in Sources */,
 				167973FB2BC8063F002FE4D9 /* FirstNames.swift in Sources */,
 				167973EE2BC805E4002FE4D9 /* RealmUser.swift in Sources */,
 				167973E32BC805D6002FE4D9 /* Database.swift in Sources */,
+				16168E3A2BE0C3ED00874AC2 /* SwiftStudentDB.swift in Sources */,
 				167973CB2BC804B9002FE4D9 /* RealmVsSwiftDataApp.swift in Sources */,
 				167973F22BC805FA002FE4D9 /* TestPlan.swift in Sources */,
 				167973FC2BC8063F002FE4D9 /* Surnames.swift in Sources */,
+				16168E362BE0C36A00874AC2 /* RealmStudent.swift in Sources */,
 				167973EF2BC805E4002FE4D9 /* RealmUserDB.swift in Sources */,
-				167973ED2BC805E4002FE4D9 /* RelamDB.swift in Sources */,
+				167973ED2BC805E4002FE4D9 /* RelamDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +422,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RealmVsSwiftData/Preview Content\"";
 				DEVELOPMENT_TEAM = 9H7GAWSLA8;
 				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

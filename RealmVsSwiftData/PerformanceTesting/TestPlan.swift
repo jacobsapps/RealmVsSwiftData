@@ -1,6 +1,6 @@
 //
 //  TestPlan.swift
-//  NoSwiftDataNoUI
+//  RealmVsSwiftData
 //
 //  Created by Jacob Bartlett on 10/04/2024.
 //
@@ -8,6 +8,12 @@
 import Foundation
 
 // Benchmarking: put these into an excel sheet, with a log number of items increasing
+
+// Query Testing:
+// 1. Fetch users w/ a certain first name
+// 2. Fetch students at named school
+// 3. Fetch all students who got an A* in Physics
+
 func realmPerformanceTest() {
     
     print("Realm")

@@ -1,6 +1,6 @@
 //
 //  ContentViewModel.swift
-//  NoSwiftDataNoUI
+//  RealmVsSwiftData
 //
 //  Created by Jacob Bartlett on 02/04/2024.
 //
@@ -17,12 +17,12 @@ final class ContentViewModel {
     }
     
     var users: [any User] = []
-    private let swiftDB: SwiftUserDB
-    private let realmDB: RealmUserDB
+//    private let swiftDB: SwiftUserDB
+//    private let realmDB: RealmUserDB
     
     init(db: DB) {
-        swiftDB = try! SwiftUserDB()
-        realmDB = RealmUserDB()
+//        swiftDB = try! SwiftUserDB()
+//        realmDB = RealmUserDB()
         
         realmPerformanceTest()
         swiftPerformanceTest()

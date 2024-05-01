@@ -1,6 +1,6 @@
 //
-//  UserDB.swift
-//  NoSwiftDataNoUI
+//  SwiftUserDB.swift
+//  RealmVsSwiftData
 //
 //  Created by Jacob Bartlett on 02/04/2024.
 //
