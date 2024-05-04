@@ -11,6 +11,10 @@ import SwiftData
 @main
 struct RealmVsSwiftDataApp: App {
 
+    init() {
+        runAllPerformanceTests()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

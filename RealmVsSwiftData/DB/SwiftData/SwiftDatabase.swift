@@ -13,6 +13,8 @@ where T: PersistentModel,
       Sorting == SortDescriptor<T>,
       Filtering == Predicate<T> {
     var container: ModelContainer { get }
+    func update(_ item: T) throws
+    func update(_ items: [T]) throws
 }
 
 extension SwiftDatabase {
@@ -54,6 +56,14 @@ extension SwiftDatabase {
         try context.save()
     }
     
+    func update(_ items: [T]) throws {
+        let context = ModelContext(container)
+        for item in items {
+            context.insert(item)
+        }
+        try context.save()
+    }
+    
     func delete(_ item: T) throws {
         let context = ModelContext(container)
         let idToDelete = item.persistentModelID
@@ -63,9 +73,22 @@ extension SwiftDatabase {
         try context.save()
     }
     
+    func delete(_ items: [T]) throws {
+        let context = ModelContext(container)
+        let idsToDelete = Set(items.map { $0.persistentModelID })
+        try context.delete(model: T.self, where: #Predicate { item in
+            idsToDelete.contains(item.persistentModelID)
+        })
+        try context.save()
+    }
+    
     func deleteAll() throws {
         let context = ModelContext(container)
         try context.delete(model: T.self)
         try context.save()
+    }
+    
+    func fileURL() -> URL? {
+        container.configurations.first?.url
     }
 }

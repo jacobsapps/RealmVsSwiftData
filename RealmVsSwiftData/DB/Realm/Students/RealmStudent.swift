@@ -10,29 +10,32 @@ import RealmSwift
 
 final class RealmStudent: Object {
     
-    enum UserError: Error {
-        case nameNotFound
-    }
-    
     @Persisted(primaryKey: true) var id: UUID
     @Persisted var firstName: String
     @Persisted var surname: String
     @Persisted var age: Int
+    @Persisted var school: RealmSchool?
     @Persisted var grades: List<RealmGrade>
-
+    
     override init() {
         super.init()
+    }
+    
+    init?(school: RealmSchool) {
         guard let firstName = firstNames.randomElement(),
               let surname = surnames.randomElement() else {
-            return
+            return nil
         }
+        super.init()
         self.id = UUID()
         self.firstName = firstName
         self.surname = surname
         self.age = Int.random(in: 11..<18)
+        self.grades = RealmGrade.randomGrades()
+        school.students.append(self)
     }
     
-    init(firstName: String, surname: String, age: Int) {
+    init(id: UUID = UUID(), firstName: String, surname: String, age: Int) {
         super.init()
         self.id = UUID()
         self.firstName = firstName
@@ -42,8 +45,8 @@ final class RealmStudent: Object {
 }
 
 final class RealmSchool: Object {
-   
-    enum SchoolType: String, PersistableEnum {
+    
+    enum SchoolType: String, PersistableEnum, CaseIterable {
         case comprehensive
         case grammar
         case `private`
@@ -56,7 +59,20 @@ final class RealmSchool: Object {
     @Persisted var type: SchoolType
     @Persisted var students: List<RealmStudent>
     
-    init(id: UUID, name: String, location: String, type: SchoolType) {
+    override init() {
+        super.init()
+        guard let name = schoolNames.randomElement(),
+              let location = schoolLocations.randomElement(),
+              let type = SchoolType.allCases.randomElement() else {
+            return
+        }
+        self.id = UUID()
+        self.name = name
+        self.location = location
+        self.type = type
+    }
+    
+    init(id: UUID = UUID(), name: String, location: String, type: SchoolType) {
         super.init()
         self.id = id
         self.name = name
@@ -67,10 +83,10 @@ final class RealmSchool: Object {
 
 final class RealmGrade: Object {
     
-    enum Subject: String, PersistableEnum {
+    enum Subject: String, PersistableEnum, CaseIterable {
         case maths
         case english
-        case litereature
+        case literature
         case physics
         case chemistry
         case biology
@@ -84,7 +100,7 @@ final class RealmGrade: Object {
         case religiousStudies
     }
     
-    enum Grade: String, PersistableEnum {
+    enum Grade: String, PersistableEnum, CaseIterable {
         case aStar
         case a
         case b
@@ -95,22 +111,45 @@ final class RealmGrade: Object {
         case u
     }
     
-    enum ExamBoard: String, PersistableEnum {
+    enum ExamBoard: String, PersistableEnum, CaseIterable {
         case aqa
         case edexcel
         case ocr
     }
     
-    @Persisted(primaryKey: true) var id: UUID = UUID()
+    @Persisted(primaryKey: true) var id: UUID
     @Persisted(indexed: true) var subject: Subject
     @Persisted(indexed: true) var grade: Grade
     @Persisted var examBoard: ExamBoard
     @Persisted(originProperty: "grades") var student: LinkingObjects<RealmStudent>
     
-    init(subject: Subject, examBoard: ExamBoard, grade: Grade) {
-        self.init()
+    override init() {
+        super.init()
+        guard let subject = Subject.allCases.randomElement(),
+              let grade = Grade.allCases.randomElement(),
+              let examBoard = ExamBoard.allCases.randomElement() else {
+            return
+        }
+        self.id = UUID()
+        self.subject = subject
+        self.grade = grade
+        self.examBoard = examBoard
+    }
+    
+    init(id: UUID = UUID(), subject: Subject, examBoard: ExamBoard, grade: Grade) {
+        super.init()
+        self.id = id
         self.subject = subject
         self.examBoard = examBoard
         self.grade = grade
+    }
+    
+    static func randomGrades() -> List<RealmGrade> {
+        let max = Int.random(in: 1..<7)
+        let grades = List<RealmGrade>()
+        for _ in 0...max {
+            grades.append(RealmGrade())
+        }
+        return grades
     }
 }

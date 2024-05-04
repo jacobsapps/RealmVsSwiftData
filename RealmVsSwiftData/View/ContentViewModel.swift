@@ -23,8 +23,5 @@ final class ContentViewModel {
     init(db: DB) {
 //        swiftDB = try! SwiftUserDB()
 //        realmDB = RealmUserDB()
-        
-        realmPerformanceTest()
-        swiftPerformanceTest()
     }
 }

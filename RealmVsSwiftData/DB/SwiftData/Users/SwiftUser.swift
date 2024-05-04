@@ -23,9 +23,9 @@ final class SwiftUser: User {
     }
     
     @Attribute(.unique) let id: UUID
-    let firstName: String
-    let surname: String
-    let age: Int
+    var firstName: String
+    var surname: String
+    var age: Int
     
     init() throws {
         guard let firstName = firstNames.randomElement(),

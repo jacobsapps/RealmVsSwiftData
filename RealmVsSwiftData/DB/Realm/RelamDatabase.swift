@@ -11,7 +11,9 @@ import RealmSwift
 protocol RealmDatabase<T>: Database 
 where T: Object,
       Sorting == RealmSwift.SortDescriptor,
-      Filtering == NSPredicate {}
+      Filtering == NSPredicate {
+    func update(transaction: () -> Void) throws
+}
 
 extension RealmDatabase {
     
@@ -43,11 +45,11 @@ extension RealmDatabase {
                 .sorted(by: sortDescriptors))
         }
     }
-    
-    func update(_ item: T) throws {
+
+    func update(transaction: () -> Void) throws {
         let realm = try Realm()
         try realm.write {
-            realm.add(item, update: .modified)
+            transaction()
         }
     }
     
@@ -58,10 +60,21 @@ extension RealmDatabase {
         }
     }
     
+    func delete(_ items: [T]) throws {
+        let realm = try Realm()
+        try realm.write {
+            realm.delete(items)
+        }
+    }
+    
     func deleteAll() throws {
         let realm = try Realm()
         try realm.write {
             realm.deleteAll()
         }
+    }
+    
+    func fileURL() -> URL? {
+        Realm.Configuration.defaultConfiguration.fileURL
     }
 }

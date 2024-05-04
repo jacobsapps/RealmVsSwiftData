@@ -12,6 +12,23 @@ final class RealmStudentDB: RealmDatabase {
 
     typealias T = RealmStudent
 
-    init() { }
+    init() {
+        // Allow easy schema migrations - don't use this in production!
+//        let config = Realm.Configuration(
+//            schemaVersion: 1,
+//            migrationBlock: { migration, oldSchemaVersion in
+//                if (oldSchemaVersion < 1) { }
+//            },
+//            deleteRealmIfMigrationNeeded: true
+//        )
+//
+//        Realm.Configuration.defaultConfiguration = config
+//        
+//        do {
+//            _ = try Realm()
+//        } catch {
+//            print(error)
+//        }
+    }
 }
 
