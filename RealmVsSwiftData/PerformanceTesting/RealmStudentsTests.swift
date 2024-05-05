@@ -15,7 +15,7 @@ func realmStudentsPerformanceTests(with studentsCount: Int = 10_000) {
     try! db.deleteAll()
     var students = [RealmStudent]()
     
-    logExecutionTime("Student instantiation") {
+//    logExecutionTime("Student instantiation") {
         let schoolCount = 100
         let firstSchool = RealmSchool(name: "Falconwood College", location: "Falconwood", type: .comprehensive)
         let schools = [firstSchool] + (1..<schoolCount).compactMap { _ in RealmSchool() }
@@ -25,7 +25,7 @@ func realmStudentsPerformanceTests(with studentsCount: Int = 10_000) {
                 RealmStudent(school: school)
             })
         }
-    }
+//    }
     
     logExecutionTime("Create students") {
         try! db.create(students)
@@ -50,9 +50,9 @@ func realmStudentsPerformanceTests(with studentsCount: Int = 10_000) {
         }
     }
     
-    measureSize(of: db)
+//    measureSize(of: db)
     
-    logExecutionTime("Delete all students") {
+//    logExecutionTime("Delete all students") {
         try! db.deleteAll()
-    }
+//    }
 }

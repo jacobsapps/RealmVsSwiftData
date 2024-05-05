@@ -9,26 +9,21 @@ import Foundation
 
 func runAllPerformanceTests() {
 
-//    swiftUsersPerformanceTests()
-//    realmUsersPerformanceTests()
-//    swiftStudentsPerformanceTests()
-//    realmStudentsPerformanceTests()
-
-//    for num in [100, 1_000, 10_000, 100_000, 1_000_000] { //, 2_000_000, 10_000_000] {
-    swiftUsersPerformanceTests(with: 2_000_000)
-//    }
-//    
-//    for num in [100, 1_000, 10_000, 100_000, 1_000_000, 2_000_000] { //, 10_000_000] {
-//        realmUsersPerformanceTests(with: 2_000_000)
-//    }
-//    
-//    for num in [100, 1_000, 10_000, 100_000, 200_000] { //, 1_000_000] {
-//        swiftStudentsPerformanceTests(with: 200_000)
-//    }
-//    
-//    for num in [100, 1_000, 10_000, 100_000, 200_000, 1_000_000] {
-//        realmStudentsPerformanceTests(with: 200_000)
-//    }
+    for num in [100, 1_000, 10_000, 100_000, 1_000_000] { //, 2_000_000, 10_000_000] {
+        swiftUsersPerformanceTests(with: num)
+    }
+    
+    for num in [100, 1_000, 10_000, 100_000, 1_000_000, 2_000_000] { //, 10_000_000] {
+        realmUsersPerformanceTests(with: num)
+    }
+    
+    for num in [100, 1_000, 10_000, 100_000, 200_000] { //, 1_000_000] {
+        swiftStudentsPerformanceTests(with: num)
+    }
+    
+    for num in [100, 1_000, 10_000, 100_000, 200_000, 1_000_000] {
+        realmStudentsPerformanceTests(with: num)
+    }
 
     deleteAllDatabaseFiles()
 }
