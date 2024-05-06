@@ -11,13 +11,13 @@ protocol Database<T> {
     associatedtype T
     associatedtype Sorting
     associatedtype Filtering
+    var fileURL: URL? { get }
     func create(_ item: T) throws
     func create(_ items: [T]) throws
     func read(predicate: Filtering?, sortBy sortDescriptors: [Sorting]) throws -> [T]
     func delete(_ item: T) throws
     func delete(_ items: [T]) throws
     func deleteAll() throws
-    func fileURL() -> URL?
 }
 
 extension Database {

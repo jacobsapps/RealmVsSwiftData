@@ -19,6 +19,10 @@ where T: PersistentModel,
 
 extension SwiftDatabase {
     
+    var fileURL: URL? {
+        container.configurations.first?.url
+    }
+    
     func create(_ items: [T]) throws {
         let context = ModelContext(container)
         for item in items {
@@ -86,9 +90,5 @@ extension SwiftDatabase {
         let context = ModelContext(container)
         try context.delete(model: T.self)
         try context.save()
-    }
-    
-    func fileURL() -> URL? {
-        container.configurations.first?.url
     }
 }

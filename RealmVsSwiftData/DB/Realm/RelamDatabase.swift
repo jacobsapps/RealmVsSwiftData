@@ -17,6 +17,10 @@ where T: Object,
 
 extension RealmDatabase {
     
+    var fileURL: URL? {
+        Realm.Configuration.defaultConfiguration.fileURL
+    }
+    
     func create(_ item: T) throws {
         let realm = try Realm()
         try realm.write {
@@ -45,7 +49,7 @@ extension RealmDatabase {
                 .sorted(by: sortDescriptors))
         }
     }
-
+    
     func update(transaction: () -> Void) throws {
         let realm = try Realm()
         try realm.write {
@@ -74,7 +78,24 @@ extension RealmDatabase {
         }
     }
     
-    func fileURL() -> URL? {
-        Realm.Configuration.defaultConfiguration.fileURL
+    /// Delete the existing schema if a migration is required.
+    /// Don't use this in production!
+    ///
+    func eraseSchema() {
+//        let config = Realm.Configuration(
+//            schemaVersion: 1,
+//            migrationBlock: { migration, oldSchemaVersion in
+//                if (oldSchemaVersion < 1) { }
+//            },
+//            deleteRealmIfMigrationNeeded: true
+//        )
+//
+//        Realm.Configuration.defaultConfiguration = config
+//
+//        do {
+//            _ = try Realm()
+//        } catch {
+//            print(error)
+//        }
     }
 }

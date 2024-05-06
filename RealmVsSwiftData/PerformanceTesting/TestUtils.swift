@@ -8,7 +8,7 @@
 import Foundation
 
 func runAllPerformanceTests() {
-
+    
     for num in [100, 1_000, 10_000, 100_000, 1_000_000] { //, 2_000_000, 10_000_000] {
         swiftUsersPerformanceTests(with: num)
     }
@@ -24,7 +24,7 @@ func runAllPerformanceTests() {
     for num in [100, 1_000, 10_000, 100_000, 200_000, 1_000_000] {
         realmStudentsPerformanceTests(with: num)
     }
-
+    
     deleteAllDatabaseFiles()
 }
 
@@ -42,7 +42,7 @@ func deleteAllDatabaseFiles() {
 }
 
 // Run these individually to avoid memory caused by one framework to affect the other
-// This seems less accurate than the standard Xcode instruments, so I'll stick with those
+// This seems less accurate than Xcode instruments, so I'll measure peak memory manually
 //func runMemoryProfiling() {
 //    let baselineMemory = reportMemory()
 //    measurePeakMemoryUsage(baseline: baselineMemory) {
@@ -77,7 +77,7 @@ func formatNumberWithCommas(_ number: Int) -> String {
 private let fileManager = FileManager.default
 
 func measureSize(of db: any Database) {
-    if let fileURL = db.fileURL(),
+    if let fileURL = db.fileURL,
        let attributes = try? fileManager.attributesOfItem(atPath: fileURL.path),
        let fileSize = attributes[FileAttributeKey.size] as? UInt64 {
         let sizeInMB = Double(fileSize) / Double(1024 * 1024)
@@ -86,7 +86,7 @@ func measureSize(of db: any Database) {
 }
 
 func delete(db: any Database) {
-    if let fileURL = db.fileURL() {
+    if let fileURL = db.fileURL {
         try? fileManager.removeItem(at: fileURL)
     }
 }
