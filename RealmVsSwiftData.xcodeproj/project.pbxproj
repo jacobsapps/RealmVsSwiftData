@@ -115,9 +115,11 @@
 		167973BE2BC804B9002FE4D9 = {
 			isa = PBXGroup;
 			children = (
+				E82FB4E72C2C5155000E0FCC /* README.md */,
 				167973C92BC804B9002FE4D9 /* RealmVsSwiftData */,
 				167973C82BC804B9002FE4D9 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
 		};
 		167973C82BC804B9002FE4D9 /* Products */ = {
