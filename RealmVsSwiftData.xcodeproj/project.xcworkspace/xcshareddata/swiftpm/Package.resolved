@@ -1,6 +1,15 @@
 {
-  "originHash" : "2174eaf93f622d57be865cd78b51b72620c12528f1f0957292620977c4d69891",
+  "originHash" : "7d9a1b256e63f6d5d8efcb97b0a396631c321eca19f5bb8324f18e19e52d3f3e",
   "pins" : [
+    {
+      "identity" : "managedmodels",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Data-swift/ManagedModels.git",
+      "state" : {
+        "revision" : "82baf8558c9f4c41b8c67bc1351729ea6308f29a",
+        "version" : "0.8.12"
+      }
+    },
     {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
@@ -17,6 +26,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "e3258a29f1993bef4fe3d9be801c7f83dc40eef5"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "64889f0c732f210a935a0ad7cda38f77f876262d",
+        "version" : "509.1.1"
       }
     }
   ],
